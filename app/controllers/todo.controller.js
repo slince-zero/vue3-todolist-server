@@ -5,7 +5,6 @@ const Op = db.Sequelize.Op
 
 // 创建并保存一条清单
 exports.create = (req, res) => {
-  console.log("11");
   if (!req.body.name) {
     res.status(400).send({
       message: 'Content can not be empty!',

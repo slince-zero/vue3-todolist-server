@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 // 提供 express 中间件
 const cors = require('cors')
 
-const todoServe = require("./app/controllers/todo.controller")
+const todoServe = require('./app/controllers/todo.controller')
 // 处理跨域问题，任何前端都可以接入此后端
 const corsOptions = {
   origin: '*',
@@ -20,18 +20,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // 简单路由
-app.get('/', (req, res) => {
-  todoServe.create(req, res);
-  res.send('Hello World!')
-})
-app.get('/aa', (req, res) => {
-  todoServe.create(req, res);
-  res.send('Hello World!')
-})
-
-
+require('./app/routes/todo.route')(app)
 // 设置监听端口
-app.listen(3000, () => {
+app.listen(5000, () => {
   console.log('Server is running at http://localhost:3000')
 })
 

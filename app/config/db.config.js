@@ -2,7 +2,7 @@
 module.exports = {
   HOST: 'localhost',
   USER: 'root',
-  PASSWORD: '123456',
+  PASSWORD: '12345678',
   DB: 'todolist',
   port: 3306,
   dialect: 'mysql',
